@@ -64,3 +64,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+php artisan app:current-weather-command Pereira CO
+php artisan app:forecast-weather-command Pereira CO 5
+
+OWM_API_KEY="0bb86de08783b7440ec1cc0477cbfc2a"
+OWM_BASE_URL="https://api.openweathermap.org/data/2.5"
+
+
