@@ -21,6 +21,46 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Installation
+
+To install the Laravel framework, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-repo/weather-app-backend.git
+    cd weather-app-backend
+    ```
+
+2. Install the dependencies:
+    ```bash
+    composer install
+    ```
+
+3. Copy the `.env.example` file to `.env`:
+    ```bash
+    cp .env.example .env
+    ```
+
+4. Generate the application key:
+    ```bash
+    php artisan key:generate
+    ```
+
+5. Add the following variables to your `.env` file:
+    ```env
+    OWM_API_KEY=
+    OWM_BASE_URL=
+    ```
+
+## Running Commands
+
+To execute the following commands from the console, use:
+
+```bash
+php artisan app:current-weather-command <city> <country_code>
+php artisan app:forecast-weather-command <city> <country_code> <days>
+```
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
@@ -64,13 +104,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-
-
-php artisan app:current-weather-command Pereira CO
-php artisan app:forecast-weather-command Pereira CO 5
-
-OWM_API_KEY="0bb86de08783b7440ec1cc0477cbfc2a"
-OWM_BASE_URL="https://api.openweathermap.org/data/2.5"
-
 
