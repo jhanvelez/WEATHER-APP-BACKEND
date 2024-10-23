@@ -10,12 +10,6 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use App\Exceptions\WeatherServiceException;
 
-/**
- * Clase WeatherService.
- * Proporciona métodos para obtener el clima actual y la previsión del clima
- * utilizando la API de OpenWeatherMap.
- * @package App\Services
- */
 class WeatherService
 {
     private HttpClientInterface $client; // Cliente HTTP para realizar solicitudes
@@ -54,7 +48,7 @@ class WeatherService
 
             return $response->toArray();
         } catch (ClientExceptionInterface | RedirectionExceptionInterface | ServerExceptionInterface $e) {
-            throw new WeatherServiceException('Ocurrió un error HTTP: ' . $e->getMessage(), $e->getCode());
+            throw new WeatherServiceException('Ocurrió un error, verifica los datos insertados.',);
         } catch (TransportExceptionInterface $e) {
             throw new WeatherServiceException('Ocurrió un error de red: ' . $e->getMessage(), $e->getCode());
         } catch (\Exception $e) {
@@ -85,7 +79,7 @@ class WeatherService
 
             return $response->toArray();
         } catch (ClientExceptionInterface | RedirectionExceptionInterface | ServerExceptionInterface $e) {
-            throw new WeatherServiceException('Ocurrió un error HTTP: ' . $e->getMessage(), $e->getCode());
+            throw new WeatherServiceException('Ocurrió un error, verifica los datos insertados.');
         } catch (TransportExceptionInterface $e) {
             throw new WeatherServiceException('Ocurrió un error de red: ' . $e->getMessage(), $e->getCode());
         } catch (\Exception $e) {
